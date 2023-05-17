@@ -22,4 +22,13 @@ public class ChatRoom {
     @Column
     private String chatRoomOwner;
 
+    public ChatRoom(Long id, String chatRoomName, String chatRoomOwner) {
+        this.id = id;
+        this.chatRoomName = chatRoomName;
+        this.chatRoomOwner = chatRoomOwner;
+    }
+
+    public ChatRoom() {
+
+    }
 }

@@ -26,4 +26,15 @@ public class Message {
     @Column
     private String MessageDate;
 
+    public Message(Long id, Long messageAuthor, Long messageRoom, String messageText, String messageDate) {
+        this.id = id;
+        this.messageAuthor = messageAuthor;
+        this.messageRoom = messageRoom;
+        this.messageText = messageText;
+        MessageDate = messageDate;
+    }
+
+    public Message() {
+
+    }
 }

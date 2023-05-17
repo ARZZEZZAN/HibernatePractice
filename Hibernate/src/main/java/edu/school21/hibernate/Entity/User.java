@@ -3,7 +3,6 @@ package edu.school21.hibernate.Entity;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -44,6 +43,16 @@ public class User implements Serializable {
             inverseJoinColumns = @JoinColumn(name = "messageid")
     )
     private List<Message> messages;
+
+    public User(Long id, String login, String password) {
+        this.id = id;
+        this.login = login;
+        this.password = password;
+    }
+
+    public User() {
+
+    }
 
     @Override
     public String toString() {
