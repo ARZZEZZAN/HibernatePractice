@@ -18,12 +18,11 @@ public class Main {
                 for(User user :  users) {
                     String json = objectMapper.writeValueAsString(user);
                     if(user == users.get(users.size()-1)) {
-                        writer.write(json + "\n");
+                        writer.write(json + "]");
                     } else {
                         writer.write(json + ",\n");
                     }
                 }
-            writer.write("]");
             } catch (Exception e) {
                 e.printStackTrace();
             }
