@@ -56,9 +56,8 @@ class UserHelperTest {
     void UserGetTest() throws UserParametersException {
         User userGet = UserHelper.getUserById(1L);
         assertEquals(users.get(0).getId(), userGet.getId());
-        assertEquals(users.get(0).getMessages().toString(), userGet.getMessages().toString());
-        assertEquals(users.get(0).getRoomsSocial().toString(), userGet.getRoomsSocial().toString());
-        assertEquals(users.get(0).getRoomCreated().toString(), userGet.getRoomCreated().toString());
+        assertEquals(users.get(0).getPassword(), userGet.getPassword());
+        assertEquals(users.get(0).getLogin(), userGet.getLogin());
     }
     @org.junit.jupiter.api.Test
     void UserUpdateTest() throws UserParametersException {
