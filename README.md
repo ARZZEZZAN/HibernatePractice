@@ -11,6 +11,7 @@ There is java classes and their presentation in the database:
     -	Password
     -	List of created rooms
     -	List of chatrooms where a user socializes
+    -	List of messages
 - Chatroom
     -	Chatroom id
     - Chatroom name
