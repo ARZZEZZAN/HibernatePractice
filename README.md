@@ -23,4 +23,5 @@ There is java classes and their presentation in the database:
     - Message room
     - Message text
     - Message date/time
+
 The essence of my work was an elementary transformation of a database into an object-oriented representation using the Hibernate framework!
