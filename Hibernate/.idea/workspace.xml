@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c8e04073-7cf6-410a-82cf-01fc09383a6d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/school21/hibernate/Entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/school21/hibernate/Entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/school21/hibernate/Hibernate/UserHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/school21/hibernate/Hibernate/UserHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/school21/hibernate/Programm/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/school21/hibernate/Programm/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/school21/hibernate/Hibernate/DBTests/UserHelperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/school21/hibernate/Hibernate/DBTests/UserHelperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/school21/hibernate/Entity/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/school21/hibernate/Entity/Message.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +127,7 @@
       <workItem from="1684394830255" duration="8472000" />
       <workItem from="1684404930373" duration="198000" />
       <workItem from="1684405551747" duration="207000" />
-      <workItem from="1684405797553" duration="1587000" />
+      <workItem from="1684405797553" duration="2027000" />
     </task>
     <servers />
   </component>
