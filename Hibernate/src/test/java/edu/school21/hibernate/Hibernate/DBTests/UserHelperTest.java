@@ -16,7 +16,10 @@ class UserHelperTest {
     private final User userSave =  new User("Sanya", "098765432");
     @BeforeEach
     void resetParameters() {
-        users = UserHelper.getUserList();
+        users = UserHelper.getUserList(false);
+        for(User user : users) {
+            System.out.println(user);
+        }
         size = users.size();
     }
     @org.junit.jupiter.api.Test
@@ -33,7 +36,7 @@ class UserHelperTest {
     @org.junit.jupiter.api.Test
     void UserSaveTest() throws UserParametersException {
         UserHelper.saveUser(userSave);
-        users = UserHelper.getUserList();
+        users = UserHelper.getUserList(false);
         size = users.size();
         assertEquals(size, 7);
         UserHelper.deleteUser(userSave);

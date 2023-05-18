@@ -17,7 +17,7 @@ public class UserHelper {
     private static final SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
     private UserHelper() {
     }
-    public static List<User> getUserList() {
+    public static List<User> getUserList(Boolean dependencies) {
         Session session = sessionFactory.openSession();
         CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
         CriteriaQuery<User> criteriaQuery = criteriaBuilder.createQuery(User.class);
@@ -28,10 +28,18 @@ public class UserHelper {
         Query query = session.createQuery(criteriaQuery);
 
         List<User> users = query.getResultList();
-        for(User user : users) {
-            Hibernate.initialize(user.getRoomsSocial());
-            Hibernate.initialize(user.getMessages());
-            Hibernate.initialize(user.getRoomCreated());
+        if(dependencies) {
+            for (User user : users) {
+                Hibernate.initialize(user.getRoomsSocial());
+                Hibernate.initialize(user.getMessages());
+                Hibernate.initialize(user.getRoomCreated());
+            }
+        } else {
+            for (User user : users) {
+                user.setMessages(null);
+                user.setRoomsSocial(null);
+                user.setRoomCreated(null);
+            }
         }
         session.close();
         return users;
@@ -39,12 +47,7 @@ public class UserHelper {
     public static User getUserById(Long id) {
         Session session = sessionFactory.openSession();
         session.getTransaction().begin();
-        User user = session.load(User.class, id);
-//        if(user != null) {
-//            Hibernate.initialize(user.getRoomsSocial());
-//            Hibernate.initialize(user.getMessages());
-//            Hibernate.initialize(user.getRoomCreated());
-//        }
+        User user = session.get(User.class, id);
         session.getTransaction().commit();
         session.close();
         return user;

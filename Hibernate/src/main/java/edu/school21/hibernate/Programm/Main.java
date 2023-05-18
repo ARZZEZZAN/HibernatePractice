@@ -15,7 +15,7 @@ public class Main {
         /* ----------------------- ALL USERS WITH THEIR ROOMS AND MESSAGES WITH JSON SERIALIZATION ----------------------- */
         ObjectMapper objectMapper = new ObjectMapper();
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("output.json"))) {
-            List<User> users = UserHelper.getUserList();
+            List<User> users = UserHelper.getUserList(true);
             writer.write("[");
                 for(User user :  users) {
                     String json = objectMapper.writeValueAsString(user);

@@ -25,6 +25,7 @@ public class User implements Serializable {
     private String login;
     @Column
     private String password;
+
     @OneToMany(cascade = CascadeType.ALL)
     @JoinTable(
             name = "chatroom",
