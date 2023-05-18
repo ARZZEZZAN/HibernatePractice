@@ -44,8 +44,7 @@ public class User implements Serializable {
     )
     private List<Message> messages;
 
-    public User(Long id, String login, String password) {
-        this.id = id;
+    public User(String login, String password) {
         this.login = login;
         this.password = password;
     }

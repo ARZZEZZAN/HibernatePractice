@@ -11,6 +11,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
+        /* ----------------------- ALL USERS WITH THEIR ROOMS AND MESSAGES WITH JSON SERIALIZATION ----------------------- */
         ObjectMapper objectMapper = new ObjectMapper();
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("output.json"))) {
             List<User> users = UserHelper.getUserList();
