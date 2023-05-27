@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +15,14 @@ import java.util.List;
 @Setter
 @ToString
 @EqualsAndHashCode
+@NamedEntityGraph(
+        name = "User.withCollections",
+        attributeNodes = {
+                @NamedAttributeNode("roomCreated"),
+                @NamedAttributeNode("roomsSocial"),
+                @NamedAttributeNode("messages")
+        }
+)
 public class User implements Serializable {
 
     @Id
@@ -26,21 +34,21 @@ public class User implements Serializable {
     @Column
     private String password;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinTable(
             name = "chatroom",
             joinColumns = @JoinColumn(name = "chatroomowner"),
             inverseJoinColumns = @JoinColumn(name = "chatroomId")
     )
     private List<ChatRoom> roomCreated = new ArrayList<>();
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinTable(
             name = "user_chatrooms",
             joinColumns = @JoinColumn(name = "userId"),
             inverseJoinColumns = @JoinColumn(name = "chatroomId")
     )
     private List<ChatRoom> roomsSocial = new ArrayList<>();
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinTable(
             name = "message",
             joinColumns = @JoinColumn(name = "messageauthor"),

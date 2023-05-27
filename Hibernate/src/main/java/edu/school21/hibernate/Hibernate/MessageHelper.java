@@ -1,15 +1,18 @@
 package edu.school21.hibernate.Hibernate;
 
+
 import edu.school21.hibernate.Entity.Message;
 import edu.school21.hibernate.Hibernate.Util.HibernateUtil;
+import jakarta.persistence.Query;
+import jakarta.persistence.criteria.CriteriaBuilder;
+import jakarta.persistence.criteria.CriteriaQuery;
+import jakarta.persistence.criteria.Root;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
-import javax.persistence.Query;
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Root;
+
 import java.util.List;
+
 
 public class MessageHelper {
     private static final SessionFactory sessionFactory = HibernateUtil.getSessionFactory();

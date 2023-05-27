@@ -12,10 +12,11 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws UserParametersException {
+          /* ---------------------------------------------- Doesn't Work ---------------------------------------------- */
         /* ----------------------- ALL USERS WITH THEIR ROOMS AND MESSAGES WITH JSON SERIALIZATION ----------------------- */
         ObjectMapper objectMapper = new ObjectMapper();
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("output.json"))) {
-            List<User> users = UserHelper.getUserList(true);
+            List<User> users = UserHelper.getUserList();
             writer.write("[");
                 for(User user :  users) {
                     String json = objectMapper.writeValueAsString(user);
