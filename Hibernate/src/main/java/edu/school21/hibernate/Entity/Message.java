@@ -7,12 +7,14 @@ import lombok.ToString;
 
 import jakarta.persistence.*;
 
+import java.io.Serializable;
+
 @Entity
 @Getter
 @Setter
 @ToString
 @EqualsAndHashCode
-public class Message {
+public class Message implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "messageid")

@@ -13,6 +13,7 @@
       <property name="format_sql">true</property>
       <property name="default_schema">chat</property>
       <property name="hibernate.current_session_context_class">thread</property>
+      <property name="hibernate.batch_fetch_style">PADDED</property>
 
       <mapping class="edu.school21.hibernate.Entity.User"/>
       <mapping class="edu.school21.hibernate.Entity.ChatRoom"/>
